@@ -1,0 +1,56 @@
+html {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  background-color: #8ecae6;
+  font-family: "Fredoka One", cursive;
+}
+
+header {
+  padding: 1em;
+}
+
+h1 {
+  font-size: 5em;
+  letter-spacing: 2px;
+  -webkit-text-stroke: 1px black;
+  text-align: center;
+  color: #ffb703;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.tools,
+.drawing-container {
+  background-color: #023047;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+  gap: 0.5em;
+}
+
+img {
+  width: 24px;
+  height: 24px;
+}
