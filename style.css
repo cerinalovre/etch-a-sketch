@@ -34,12 +34,38 @@ h1 {
 }
 
 main {
-  flex-grow: 1;
+  display: flex;
+  justify-content: space-around;
 }
 
 .tools,
 .drawing-container {
   background-color: #023047;
+}
+
+/* .drawing-container {
+  max-width: fit-content;
+  border: 5px solid #023047;
+  border-radius: 5px;
+} */
+
+.drawing-area {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  height: 700px;
+  border: 20px solid #023047;
+  border-radius: 20px;
+}
+
+.row {
+  display: flex;
+  flex: 1;
+}
+
+.pixel {
+  flex: 1;
+  background-color: white;
 }
 
 footer {
