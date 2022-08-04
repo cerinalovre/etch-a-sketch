@@ -2,6 +2,7 @@ const n = 64;
 const container = document.querySelector(".drawing-area");
 const colorInput = document.querySelector("#color");
 const eraser = document.querySelector(".eraser");
+const clear = document.querySelector(".clear");
 let color = "#DC3D3D";
 let mouseDown = false;
 
@@ -31,6 +32,16 @@ for (let i = 0; i < n; i++) {
     pixelEventListeners(pixel);
   }
 }
+
+clear.addEventListener("click", () => {
+  let pixels = document.querySelectorAll(".pixel");
+
+  pixels.forEach((elem) => {
+    if (elem.style.backgroundColor) {
+      elem.removeAttribute("style");
+    }
+  });
+});
 
 function pixelEventListeners(pixel) {
   pixel.addEventListener("mousedown", () => {
