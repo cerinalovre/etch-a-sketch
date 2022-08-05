@@ -35,7 +35,8 @@ h1 {
 
 main {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 8em;
 }
 
 .drawing-area {
@@ -51,6 +52,7 @@ main {
   background-color: #023047;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: stretch;
   border-radius: 20px;
 }
@@ -69,6 +71,7 @@ input[type="color"] {
   -webkit-appearance: none;
   align-self: center;
   margin: 2em;
+  margin-bottom: 3em;
   width: 100px;
   height: 100px;
   cursor: pointer;
@@ -102,7 +105,7 @@ button {
   color: #fff;
   font-size: 2em;
   padding: 0.6em 1.4em;
-  margin: 1em;
+  margin: 1.2em;
   border-radius: 20px;
 }
 
@@ -117,6 +120,36 @@ button:active {
   box-shadow: 0 5px #ffb703;
   color: #ffb703;
   transform: scale(0.98);
+}
+
+.res-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.8em;
+  margin: 2em 2.5em;
+}
+
+.res-text {
+  font-size: 24px;
+  color: #ffffff;
+  text-align: center;
+}
+
+#resolution {
+  -webkit-appearance: none;
+  background: #219ebc;
+  border-radius: 20px;
+  height: 12px;
+}
+
+#resolution::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: #ffffff;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
 }
 
 img {

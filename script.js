@@ -1,8 +1,10 @@
-const n = 64;
 const container = document.querySelector(".drawing-area");
 const colorInput = document.querySelector("#color");
 const eraser = document.querySelector(".eraser");
 const clear = document.querySelector(".clear");
+const resolution = document.querySelector("#resolution");
+const resText = document.querySelector(".res-text");
+let currentResolution = 64;
 let color = "#DC3D3D";
 let mouseDown = false;
 
@@ -19,12 +21,17 @@ eraser.addEventListener("click", () => {
   color = "#FFFFFF";
 });
 
-for (let i = 0; i < n; i++) {
+resolution.oninput = () => {
+  currentResolution = resolution.value;
+  resText.textContent = `${resolution.value}x${resolution.value}`;
+};
+
+for (let i = 0; i < currentResolution; i++) {
   const row = document.createElement("div");
   container.appendChild(row);
   row.classList.add("row");
 
-  for (let i = 0; i < n; i++) {
+  for (let i = 0; i < currentResolution; i++) {
     const pixel = document.createElement("div");
     pixel.classList.add("pixel");
     pixel.setAttribute("draggable", "false");
