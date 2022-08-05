@@ -21,6 +21,8 @@ body {
   font-family: "Fredoka One", cursive;
 }
 
+/* HEADER */
+
 header {
   padding: 1em;
 }
@@ -33,11 +35,15 @@ h1 {
   color: #ffb703;
 }
 
+/* MAIN */
+
 main {
   display: flex;
   justify-content: center;
   gap: 8em;
 }
+
+/* DRAWING AREA */
 
 .drawing-area {
   display: flex;
@@ -45,15 +51,6 @@ main {
   width: 710px;
   height: 710px;
   border: 30px solid #023047;
-  border-radius: 20px;
-}
-
-.tools {
-  background-color: #023047;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
   border-radius: 20px;
 }
 
@@ -65,6 +62,17 @@ main {
 .pixel {
   flex: 1;
   background-color: white;
+}
+
+/* TOOLS */
+
+.tools {
+  background-color: #023047;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  border-radius: 20px;
 }
 
 input[type="color"] {
@@ -152,15 +160,27 @@ button:active {
   border-radius: 50%;
 }
 
+/* FOOTER */
+
+footer {
+  display: flex;
+  justify-content: center;
+}
+
 img {
   width: 24px;
   height: 24px;
 }
 
-footer {
+a {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
   padding: 0.5em;
   gap: 0.5em;
+}
+
+a:visited {
+  color: #000000;
 }
