@@ -21,24 +21,14 @@ eraser.addEventListener("click", () => {
   color = "#FFFFFF";
 });
 
-resolution.oninput = () => {
+createGrid(currentResolution);
+
+resolution.addEventListener("input", () => {
   currentResolution = resolution.value;
   resText.textContent = `${resolution.value}x${resolution.value}`;
-};
-
-for (let i = 0; i < currentResolution; i++) {
-  const row = document.createElement("div");
-  container.appendChild(row);
-  row.classList.add("row");
-
-  for (let i = 0; i < currentResolution; i++) {
-    const pixel = document.createElement("div");
-    pixel.classList.add("pixel");
-    pixel.setAttribute("draggable", "false");
-    row.appendChild(pixel);
-    pixelEventListeners(pixel);
-  }
-}
+  clearGrid();
+  createGrid(currentResolution);
+});
 
 clear.addEventListener("click", () => {
   let pixels = document.querySelectorAll(".pixel");
@@ -49,6 +39,26 @@ clear.addEventListener("click", () => {
     }
   });
 });
+
+function clearGrid() {
+  container.innerHTML = "";
+}
+
+function createGrid(currentResolution) {
+  for (let i = 0; i < currentResolution; i++) {
+    const row = document.createElement("div");
+    container.appendChild(row);
+    row.classList.add("row");
+
+    for (let i = 0; i < currentResolution; i++) {
+      const pixel = document.createElement("div");
+      pixel.classList.add("pixel");
+      pixel.setAttribute("draggable", "false");
+      row.appendChild(pixel);
+      pixelEventListeners(pixel);
+    }
+  }
+}
 
 function pixelEventListeners(pixel) {
   pixel.addEventListener("mousedown", () => {
