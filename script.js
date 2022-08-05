@@ -4,9 +4,12 @@ const eraser = document.querySelector(".eraser");
 const clear = document.querySelector(".clear");
 const resolution = document.querySelector("#resolution");
 const resText = document.querySelector(".res-text");
+
 let currentResolution = 64;
 let color = "#DC3D3D";
 let mouseDown = false;
+
+createGrid(currentResolution);
 
 colorInput.addEventListener("input", () => {
   console.log(colorInput.value);
@@ -21,13 +24,13 @@ eraser.addEventListener("click", () => {
   color = "#FFFFFF";
 });
 
-createGrid(currentResolution);
-
 resolution.addEventListener("input", () => {
   currentResolution = resolution.value;
   resText.textContent = `${resolution.value}x${resolution.value}`;
-  clearGrid();
-  createGrid(currentResolution);
+  resolution.onmouseup = () => {
+    clearGrid();
+    createGrid(currentResolution);
+  };
 });
 
 clear.addEventListener("click", () => {
