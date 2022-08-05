@@ -177,18 +177,15 @@ a {
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  color: #000000;
   padding: 0.5em;
   gap: 0.5em;
 }
 
-a p {
-  color: #000000;
-}
-
-a:visited {
-  color: #000000;
-}
-
-a:link {
-  color: #000000;
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
 }
