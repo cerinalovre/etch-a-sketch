@@ -181,6 +181,10 @@ a {
   gap: 0.5em;
 }
 
+a p {
+  color: #000000;
+}
+
 a:visited {
   color: #000000;
 }
