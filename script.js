@@ -12,7 +12,10 @@ let mouseDown = false;
 createGrid(currentResolution);
 
 colorInput.addEventListener("input", () => {
-  console.log(colorInput.value);
+  color = colorInput.value;
+});
+
+colorInput.addEventListener("click", () => {
   color = colorInput.value;
 });
 
@@ -66,12 +69,10 @@ function createGrid(currentResolution) {
 function pixelEventListeners(pixel) {
   pixel.addEventListener("mousedown", () => {
     mouseDown = true;
-    console.log(mouseDown);
   });
 
   pixel.addEventListener("mouseup", () => {
     mouseDown = false;
-    console.log(mouseDown);
   });
 
   pixel.addEventListener("mousemove", () => {
